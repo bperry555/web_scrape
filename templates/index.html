@@ -1,33 +1,108 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Mars, Mars and more Mars!</title>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <link rel="stylesheet" href="../css/stylesheet.css">
-</head>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
-<body>
-  <div class="container-fluid">
-    <div class="jumbotron text-center">
-      <h1>Mars</h1>
-      <p>Beach. Rainforest. Volcano. Tree House. Sloths.</p>
-      <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Get Data!</a></p>
+    <title>Hello, world!</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class='column'>
+          <div class="jumbotron jumbotron-fluid">
+            <div class="container">
+              <h1 class="display-4">#MARS</h1>
+              <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
+              <a href="/" class="btn btn-primary">Refresh latest </a>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-    <img src="{{ # }}" alt="Sloth">
-    <h2>The typical weather in Costa Rica is:</h2>
-    <h3>Max Temp: {{ # }}</h3>
-    <h3>Min Temp: {{ # }}</h3>
-  </div>
-  </div>
-</body>
-
+    <div class="container">   
+      <div class="row">
+        <div class="column">
+          <div class="card">
+            <h5 class="card-header">RECENT MARS NEWS</h5>
+            <div class="card-body">
+              <h5 class="card-title">{{ mars_db_info.nasa_news }}</h5>
+              <p class="card-text">{{ mars_db_info.nasa_article }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container">    
+      <div class="row">
+        <div class="column-lg-8">
+          <div class="card">
+            <h5 class="card-header">--FEATURED MARS PICTURE HERE--</h5>
+            <img src="{{ mars_db_info.featured_img_url }}" class="card-img-top" alt="...">
+            <div class="card-body">
+            </div>
+          </div>
+        </div>
+        <div class="column-lg-2">
+          <div class="card">
+            <h5 class="card-header">CURRENT WEATHER TWEETS</h5>
+            <div class="card-body">
+              <div class="card-text">{{ mars_db_info.mars_weather_tweet }}</div>
+            </div>
+          </div>
+          <div class="container">
+            <p>{{ mars_db_info.mars_table | safe }}</span></p>
+          </div>
+        </div> 
+            <!--{% for table in mars_db_info.mars_table %}-->
+          <!--{% endfor %}-->
+      </div>
+    </div>
+    <div class='container'>
+      <div class='row'>
+        <div class='column'>
+          <div class='container'>
+            <div class="card">
+              <img src="{{ mars_db_info.mars_hemisphere_image_urls[0]['img_url'] }}" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">{{ mars_db_info.mars_hemisphere_image_urls[0]['title'] }}</h5>
+              </div>
+            </div>
+            <div class="card">
+              <img src="{{ mars_db_info.mars_hemisphere_image_urls[1]['img_url'] }}" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">{{ mars_db_info.mars_hemisphere_image_urls[1]['title'] }}</h5>
+            </div>
+            <div class="card">
+              <img src="{{ mars_db_info.mars_hemisphere_image_urls[2]['img_url'] }}" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">{{ mars_db_info.mars_hemisphere_image_urls[2]['title'] }}</h5>
+              </div>
+            </div>
+            <div class="card">
+              <img src="{{ mars_db_info.mars_hemisphere_image_urls[3]['img_url'] }}" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">{{ mars_db_info.mars_hemisphere_image_urls[3]['title'] }}</h5>
+              </div>
+            </div>
+          </div>
+        </div> 
+      </div>
+    </div>      
+  
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  </body>
 </html>
 
-<!-- <img src="{{ vacation.sloth_img }}" alt="Sloth">
+<!-- <img src=" vacation.sloth_img " alt="Sloth">
     <h2>The typical weather in Costa Rica is:</h2>
-    <h3>Max Temp: {{ vacation.max_temp }}</h3>
-    <h3>Min Temp: {{ vacation.min_temp }}</h3> -->
+    <h3>Max Temp:  vacation.max_temp </h3>
+    <h3>Min Temp:  vacation.min_temp </h3> -->
