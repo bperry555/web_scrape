@@ -1,0 +1,29 @@
+body{
+    background-color: darkgrey;
+}
+.jumbotron-fluid {
+    text-align: center;   
+}
+.btn {
+    background-color: goldenrod;
+    color: rgb(70, 80, 95);
+    font-weight: 600;
+}
+.card-news, .card-feat, .card-tweet, .card-hem, .dataframe {
+    border-top-width: 4px;
+    border-right-width: 4px;
+    border-top-style: outset;
+    border-color: goldenrod;
+    background-color: rgb(70, 80, 95);
+    color: ivory;
+    font-weight: 600;
+}
+.card-body {
+    background-color: rgb(70,80,95);
+    color: goldenrod;
+    text-align: center;   
+}
+.card-col{
+    padding-left: 10px;
+    padding-right: 10px;
+}   
